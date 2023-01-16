@@ -14,12 +14,6 @@ require('../lib/index')(Sequelize);
 
 chai.use(chaiAsPromised);
 
-// Make sure errors get thrown when testing
-Sequelize.Promise.onPossiblyUnhandledRejection((e) => {
-	throw e;
-});
-Sequelize.Promise.longStackTraces();
-
 const Support = {
 	Sequelize,
 
@@ -88,10 +82,6 @@ const Support = {
 			dialectOptions: options.dialectOptions || {}
 		});
 
-		if (process.env.DIALECT === 'postgres-native') {
-			sequelizeOptions.native = true;
-		}
-
 		if (config.storage) {
 			sequelizeOptions.storage = config.storage;
 		}
@@ -136,10 +126,6 @@ const Support = {
 	getTestDialect() {
 		let envDialect = process.env.DIALECT || 'mysql';
 
-		if (envDialect === 'postgres-native') {
-			envDialect = 'postgres';
-		}
-
 		if (this.getSupportedDialects().indexOf(envDialect) === -1) {
 			throw new Error(`The dialect you have passed is unknown. Did you really mean: ${envDialect}`);
 		}
@@ -161,10 +147,6 @@ const Support = {
 
 	getTestDialectTeaser(moduleName) {
 		let dialect = this.getTestDialect();
-
-		if (process.env.DIALECT === 'postgres-native') {
-			dialect = 'postgres-native';
-		}
 
 		return `[${dialect.toUpperCase()}] ${moduleName}`;
 	},
