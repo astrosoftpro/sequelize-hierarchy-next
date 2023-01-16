@@ -1,13 +1,10 @@
-# sequelize-hierarchy.js
+# sequelize-hierarchy-next.js
+
+Forked from https://github.com/overlookmotel/sequelize-hierarchy
 
 # Nested hierarchies for Sequelize
 
-[![NPM version](https://img.shields.io/npm/v/sequelize-hierarchy.svg)](https://www.npmjs.com/package/sequelize-hierarchy)
-[![Build Status](https://img.shields.io/travis/overlookmotel/sequelize-hierarchy/master.svg)](http://travis-ci.org/overlookmotel/sequelize-hierarchy)
-[![Dependency Status](https://img.shields.io/david/overlookmotel/sequelize-hierarchy.svg)](https://david-dm.org/overlookmotel/sequelize-hierarchy)
-[![Dev dependency Status](https://img.shields.io/david/dev/overlookmotel/sequelize-hierarchy.svg)](https://david-dm.org/overlookmotel/sequelize-hierarchy)
-[![Greenkeeper badge](https://badges.greenkeeper.io/overlookmotel/sequelize-hierarchy.svg)](https://greenkeeper.io/)
-[![Coverage Status](https://img.shields.io/coveralls/overlookmotel/sequelize-hierarchy/master.svg)](https://coveralls.io/r/overlookmotel/sequelize-hierarchy)
+[![NPM version](https://img.shields.io/npm/v/sequelize-hierarchy.svg)](https://www.npmjs.com/package/sequelize-hierarchy-next)
 
 ## What's it for?
 
@@ -38,7 +35,7 @@ Requires Sequelize v2.x.x, v3.x.x, v4.x.x or v5.x.x. Supports only Node v8 or hi
 To load module:
 
 ```js
-const Sequelize = require('sequelize-hierarchy')();
+const Sequelize = require('sequelize-hierarchy-next')();
 // NB Sequelize must also be present in `node_modules`
 ```
 
@@ -46,7 +43,7 @@ or, a more verbose form useful if chaining multiple Sequelize plugins:
 
 ```js
 const Sequelize = require('sequelize');
-require('sequelize-hierarchy')(Sequelize);
+require('sequelize-hierarchy-next')(Sequelize);
 ```
 
 ### Initializing hierarchy
@@ -276,7 +273,7 @@ Errors thrown by the plugin are of type `HierarchyError`. The error class can be
 
 Use `npm test` to run the tests. Use `npm run cover` to check coverage.
 
-To run tests on a particular database, use `npm run test-mysql`, `npm run test-postgres`, `npm run test-postgres-native`, `npm run test-sqlite` or `npm run test-mssql`.
+To run tests on a particular database, use `npm run test-mysql`, `npm run test-postgres`, `npm run test-sqlite` or `npm run test-mssql`.
 
 Requires a database called 'sequelize_test' and a db user 'sequelize_test' with no password.
 

@@ -1,6 +1,6 @@
 {
-  "name": "sequelize-hierarchy",
-  "version": "2.0.4",
+  "name": "sequelize-hierarchy-next",
+  "version": "0.0.0",
   "description": "Nested hierarchies for Sequelize",
   "main": "index.js",
   "author": {
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/overlookmotel/sequelize-hierarchy.git"
+    "url": "https://github.com/astrosoftpro/sequelize-hierarchy-next.git"
   },
   "bugs": {
-    "url": "https://github.com/overlookmotel/sequelize-hierarchy/issues"
+    "url": "https://github.com/astrosoftpro/sequelize-hierarchy-next/issues"
   },
   "dependencies": {
     "is-generator": "^1.0.3",
@@ -31,13 +31,13 @@
     "eslint-plugin-eslint-comments": "^3.1.1",
     "eslint-plugin-import": "^2.17.2",
     "istanbul": "^0.4.5",
-    "mocha": "^6.1.4",
-    "mysql2": "^1.6.5",
-    "pg": "^7.10.0",
+    "mocha": "^10.2.0",
+    "mysql2": "^3.0.1",
+    "pg": "^8.8.0",
     "pg-hstore": "^2.3.2",
-    "pg-native": "^3.0.0",
-    "sequelize": "^5.7.5",
-    "sqlite3": "^4.0.6",
+    "sequelize": "^6.2.8",
+    "sqlite3": "^5.1.4",
+    "standard-version": "^9.5.0",
     "tedious": "^6.1.1"
   },
   "keywords": [
@@ -53,7 +53,6 @@
     "lint-fix": "eslint '*.js' '.*.js' '**/*.js' '**/.*.js' --fix",
     "test-mysql": "cross-env DIALECT=mysql npm run test-main",
     "test-postgres": "cross-env DIALECT=postgres npm run test-main",
-    "test-postgres-native": "cross-env DIALECT=postgres-native npm run test-main",
     "test-sqlite": "cross-env DIALECT=sqlite npm run test-main",
     "test-mssql": "cross-env DIALECT=mssql npm run test-main",
     "test-main": "mocha --check-leaks --colors -t 30000 -R spec \"test/**/*.test.js\"",
